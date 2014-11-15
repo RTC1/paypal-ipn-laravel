@@ -36,7 +36,7 @@ class PayPalIpn
     public function getOrder()
     {
         $request = $this->getRequestHandler();
-        $request->forceSSLv3(FALSE);
+        $request->forceSSLv3(false);
 
         $listener = new PayPalListener($request);
         $listener->setMode($this->getEnvironment());
@@ -45,7 +45,7 @@ class PayPalIpn
             return $this->store($request->getData());
         } else {
             throw new InvalidIpnException("PayPal as responded with INVALID");
-        }
+
     }
 
     /**
