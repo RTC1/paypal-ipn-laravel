@@ -45,7 +45,7 @@ class PayPalIpn
             return $this->store($request->getData());
         } else {
             throw new InvalidIpnException("PayPal as responded with INVALID");
-
+        }
     }
 
     /**
