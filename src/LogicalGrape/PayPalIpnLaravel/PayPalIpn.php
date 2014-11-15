@@ -36,7 +36,6 @@ class PayPalIpn
     public function getOrder()
     {
         $request = $this->getRequestHandler();
-        $request->forceSSLv3(FALSE);
 
         $listener = new PayPalListener($request);
         $listener->setMode($this->getEnvironment());
